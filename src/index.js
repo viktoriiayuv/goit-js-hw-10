@@ -48,8 +48,9 @@ function renderCountry(country) {
         languages,
       }) => {
         let languagesString = Object.values(languages).join(', ');
-        return `<img src="${svg}" alt="flag" width="50"/>
-          <h2>${official}</h2>
+        return `<div>
+          <img class="country-flag" src="${svg}" alt="flag" width="40"/>
+          <h2 class="country-name">${official}</h2></div>
           <p><b>Capital: </b>${capital}</p>
           <p><b>Population: </b>${population}</p>
           <p><b>Languages: </b>${languagesString}</p>`;
@@ -62,9 +63,9 @@ function renderCountry(country) {
 function renderCountriesList(countries) {
   const markup = countries
     .map(({ name: { official }, flags: { svg } }) => {
-      return `<li class=country-item>
-          <img src="${svg}" alt="flag" width="30"/>
-          <p>${official}</p>
+      return `<li class="country-item">
+          <img class="country-flag" src="${svg}" alt="flag" width="30"/>
+          <p class="country-name">${official}</p>
         </li>`;
     })
     .join('');

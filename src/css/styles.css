@@ -12,11 +12,27 @@ body {
   line-height: 1.5;
 }
 
+img {
+  display: block;
+}
+
+p,
+h2 {
+  padding: 0;
+  margin: 0;
+}
+
 #search-box {
   font: inherit;
   padding: 8px;
   max-width: 320px;
   margin-bottom: 16px;
+  border: 1px solid rgb(72, 105, 133);
+}
+
+#search-box:focus {
+  border-color: rgb(6, 120, 212);
+  outline: none;
 }
 
 .country-list {
@@ -24,10 +40,21 @@ body {
   padding: 0;
   margin: 0;
 }
-.country-item {
+.country-item,
+.country-info > div {
   display: flex;
+  align-items: center;
 }
 
-img {
-  display: inline-block;
+.country-flag + .country-name {
+  margin-left: 10px;
+}
+
+.country-info > div {
+  margin-bottom: 16px;
+}
+
+.country-item:not(:last-child),
+.country-info p:not(:last-child) {
+  margin-bottom: 10px;
 }
